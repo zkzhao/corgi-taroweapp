@@ -1,0 +1,1 @@
+yarn add eslint eslint babel-eslint eslint-config-airbnb eslint-config-prettier eslint-plugin-import eslint-plugin-prettier eslint-plugin-jsx-a11y eslint-plugin-react -D
