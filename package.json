@@ -35,7 +35,6 @@
     "is-url": "^1.2.4",
     "nerv-devtools": "^1.4.0-beta.3",
     "nervjs": "^1.4.0-beta.3",
-    "qs": "^6.7.0",
     "redux": "^4.0.1"
   },
   "devDependencies": {
@@ -44,6 +43,7 @@
     "@tarojs/plugin-sass": "1.3.0-beta.2",
     "@tarojs/plugin-uglifyjs": "1.3.0-beta.2",
     "@tarojs/webpack-runner": "1.3.0-beta.2",
+    "@types/qs": "^6.5.3",
     "@types/react": "^16.4.6",
     "@types/webpack-env": "^1.13.6",
     "@typescript-eslint/parser": "^1.6.0",
@@ -62,10 +62,36 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-taro": "1.3.0-beta.2",
-    "pont-engine": "^0.1.73",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.10.0",
     "stylelint": "9.3.0",
     "stylelint-config-taro-rn": "1.3.0-beta.2",
     "stylelint-taro-rn": "1.3.0-beta.2",
     "typescript": "^3.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.{ts,tsx}": [
+        "pretty-quick --staged",
+        "npm run lint:ts",
+        "git add"
+      ],
+      "*.{js,jsx}": [
+        "pretty-quick --staged",
+        "eslint --fix",
+        "git add"
+      ],
+      "*.{css,scss,less}": [
+        "npm run lint:css",
+        "git add"
+      ]
+    }
   }
 }
