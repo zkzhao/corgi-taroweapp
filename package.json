@@ -15,7 +15,11 @@
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
     "dev:h5": "npm run build:h5 -- --watch",
-    "dev:rn": "npm run build:rn -- --watch"
+    "dev:rn": "npm run build:rn -- --watch",
+    "lint:ts": "tsc  --noEmit && tslint -p \".\" -t stylish",
+    "lint:js": "eslint . --fix",
+    "lint:css": "stylelint 'src/**/*.css' 'src/**/*.scss' 'src/**/*.less'",
+    "lint:scss": "stylelint 'src/**/*.scss'"
   },
   "author": "",
   "license": "MIT",
