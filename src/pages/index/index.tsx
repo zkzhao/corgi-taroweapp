@@ -1,6 +1,6 @@
-import Taro, { Component, Config } from "@tarojs/taro";
-import { View, Text } from "@tarojs/components";
-import "./index.scss";
+import Taro, { Component, Config } from '@tarojs/taro'
+import { View, Text } from '@tarojs/components'
+import './index.scss'
 
 export default class Index extends Component {
   /**
@@ -11,8 +11,8 @@ export default class Index extends Component {
    * 提示和声明 navigationBarTextStyle: 'black' | 'white' 类型冲突, 需要显示声明类型
    */
   config: Config = {
-    navigationBarTitleText: "首页1"
-  };
+    navigationBarTitleText: '首页1'
+  }
 
   componentWillMount() {}
 
@@ -26,9 +26,9 @@ export default class Index extends Component {
 
   render() {
     return (
-      <View className="index">
+      <View className='index'>
         <Text onClick={() => console.log(123)}>Hello world!</Text>
       </View>
-    );
+    )
   }
 }
