@@ -17,7 +17,9 @@
     "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "lint:ts": "tsc  --noEmit && tslint -p \".\" -t stylish",
-    "lint:js": "eslint . --fix"
+    "lint:js": "eslint . --fix",
+    "lint:css": "stylelint 'src/**/*.css' 'src/**/*.scss' 'src/**/*.less'",
+    "lint:scss": "stylelint 'src/**/*.scss'"
   },
   "author": "",
   "license": "MIT",
@@ -94,6 +96,10 @@
       "*.{js,jsx}": [
         "pretty-quick --staged",
         "eslint --fix",
+        "git add"
+      ],
+      "*.{css,scss,less}": [
+        "npm run lint:css",
         "git add"
       ]
     }
