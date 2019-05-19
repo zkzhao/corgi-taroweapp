@@ -1,6 +1,7 @@
 import Taro, { Component, Config } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import './index.scss'
+import { routers } from '@/routes'
 
 export default class Index extends Component {
   /**
@@ -27,7 +28,15 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
-        <Text onClick={() => console.log(123)}>Hello world!</Text>
+        <Text
+          onClick={() => {
+            Taro.navigateTo({
+              url: `${routers.login}`
+            })
+          }}
+        >
+          Hello world!
+        </Text>
       </View>
     )
   }
